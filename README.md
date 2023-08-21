@@ -19,19 +19,14 @@ Create a .env file inside the `server` folder with the following variables:
 Use `npm run dev` during development to start a development server for the client. This uses an npm package called `concurrently` to simultaneosly run the client and the server on your local machine. Changes to files will be watched and the server will automatically restart when changes are made.
 
 
-# 34B Workshop: Authentication & OAuth
+# 34B Workshop: Registering Users
 
-_Add_ the option for users to authenticate via Github OAuth. They should still have the ability to register and login with a username and password.
-
-The [Github documentation on building OAuth apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps) will be very useful to reference.
+_Add_ the option for users to register themselves as a new user.
 
 ## Suggestions
 
 Here are some suggestions for what to work on:
 
-- Frontend components are updated to signify the "Login via Github" option.
-- A Github OAuth app has been created with a client id and secret.
-- A redirect route has been added to the backend to receive the authorization code from Github.
-- The backend is able to make requests to Github on behalf of a user by sending an access token.
-- The account for a user logged in via Github is created and stored in the database.
-- The client still receives a token from the server after a user is successfully authenticated, _regardless_ of whether the user logged in via Github or username/password.
+- Frontend components are updated to include a "Register as new User" option.
+- Registering a new user will send a request to the `auth/register` endpoint which should add the new user to the database and return a token.
+- The client still receives a token from the server after a user is successfully authenticated, whether they have signed in or newly registered.
